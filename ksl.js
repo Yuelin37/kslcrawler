@@ -14,10 +14,8 @@ var sendNotification = false;
 var controller = Botkit.slackbot({
   debug: false,
 });
-
-var bot = controller.spawn({
-  token: 'xoxb-128204212119-TY8HT6LHZplkOa0PbyetmlpX'
-}).startRTM();
+var botOptions = {};
+var bot;
 
 var itemfile = __dirname + '/items.json';
 var items = {};
@@ -35,8 +33,8 @@ if (!fs.existsSync(newItemsfile)) {
 
 
 function checkItems(){
+  console.log('Checking...');
   childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-    console.log('Checking...');
     var msg = stdout;
     var objs = JSON.parse('{'+msg.substring(0, msg.length - 2) + '}');
     for(var obj in objs){
@@ -75,8 +73,10 @@ properties.parse ('.properties', { path: true }, function (error, obj){
     path.join(__dirname, 'getlist.js'),
     url_query
   ];
+  botOptions.token = obj.token;
+  bot = controller.spawn(botOptions).startRTM();
   checkItems();
-  interval = setInterval(checkItems, 300000);
+  interval = setInterval(checkItems, 600000);
 });
 
 // clearInterval(interval);
