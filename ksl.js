@@ -34,6 +34,8 @@ if (!fs.existsSync(newItemsfile)) {
 
 function checkItems(){
   console.log('Checking...');
+  
+  // items = JSON.parse(fs.readFileSync(itemfile, 'utf8'));
   childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
     var msg = stdout;
     var objs = JSON.parse('{'+msg.substring(0, msg.length - 2) + '}');
@@ -76,7 +78,7 @@ properties.parse ('.properties', { path: true }, function (error, obj){
   botOptions.token = obj.token;
   bot = controller.spawn(botOptions).startRTM();
   checkItems();
-  interval = setInterval(checkItems, 600000);
+  interval = setInterval(checkItems, 300000);
 });
 
 // clearInterval(interval);

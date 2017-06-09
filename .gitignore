@@ -1,3 +1,5 @@
 node_modules/*
 .properties
 *.properties
+items.json
+newItems.json
