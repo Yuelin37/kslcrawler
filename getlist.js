@@ -26,8 +26,10 @@ page.open(system.args[1], function (status) {
             var locatoin = $(this).find('.mileage').next().text().trim().split('|')[0].trim();
             var age ='';
             var data = $(this).attr('data-listing');
-            if ($(this).find('.mileage').next().text().trim().split('|')[1].split(';').length>1)
-              age = $(this).find('.mileage').next().text().trim().split('|')[1].split(';')[1].trim();
+            if ($(this).find('.mileage').next().text().trim().split('|')[1] != undefined){
+              if ($(this).find('.mileage').next().text().trim().split('|')[1].split(';').length>1)
+                age = $(this).find('.mileage').next().text().trim().split('|')[1].split(';')[1].trim();
+            }
             console.log('{"title": "' + title +'", "price": "' + price + '", "age": "' + age + '", "mileage": "' + mileage + '", "data": '+ data + '}');
           });
         }

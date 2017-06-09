@@ -34,10 +34,11 @@ if (!fs.existsSync(newItemsfile)) {
 
 function checkItems(){
   console.log('Checking...');
-  
+  // For debug.
   // items = JSON.parse(fs.readFileSync(itemfile, 'utf8'));
   childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
     var msg = stdout;
+    // console.log(msg);
     var objs = JSON.parse('{'+msg.substring(0, msg.length - 2) + '}');
     for(var obj in objs){
     // console.log(objs[obj]);
@@ -78,7 +79,7 @@ properties.parse ('.properties', { path: true }, function (error, obj){
   botOptions.token = obj.token;
   bot = controller.spawn(botOptions).startRTM();
   checkItems();
-  interval = setInterval(checkItems, 300000);
+  interval = setInterval(checkItems, 600000);
 });
 
 // clearInterval(interval);
