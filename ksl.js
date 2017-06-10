@@ -80,7 +80,7 @@ properties.parse ('.properties', { path: true }, function (error, obj){
   botOptions.token = obj.token;
   bot = controller.spawn(botOptions).startRTM();
   checkItems();
-  interval = setInterval(checkItems, 60000);
+  interval = setInterval(checkItems, 600000);
 });
 
 // clearInterval(interval);
