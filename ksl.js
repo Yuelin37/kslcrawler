@@ -36,6 +36,7 @@ function checkItems(){
   console.log('Checking...');
   // For debug.
   // items = JSON.parse(fs.readFileSync(itemfile, 'utf8'));
+  console.log(binPath);
   childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
     var msg = stdout;
     // console.log(msg);
@@ -79,7 +80,7 @@ properties.parse ('.properties', { path: true }, function (error, obj){
   botOptions.token = obj.token;
   bot = controller.spawn(botOptions).startRTM();
   checkItems();
-  interval = setInterval(checkItems, 600000);
+  interval = setInterval(checkItems, 60000);
 });
 
 // clearInterval(interval);
