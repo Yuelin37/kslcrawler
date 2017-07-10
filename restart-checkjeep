@@ -1,0 +1,5 @@
+#!/bin/bash
+./build-jeep-docker
+docker stop checkjeep
+docker rm checkjeep
+docker run -d --name checkjeep --restart always checkjeep

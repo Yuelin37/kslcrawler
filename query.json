@@ -1,0 +1,4 @@
+{
+    "jeep": "https://www.ksl.com/auto/search/index?p=&make[]=Jeep&model[]=Wrangler&yearFrom=2008&miles=50&numberDoors[]=2&numberDoors[]=3&newUsed[]=Used&newUsed[]=Certified&page=0&sort=0&perPage=30",
+    "golf": "http://www.ksl.com/auto/search/index?make=Volkswagen&make%5B%5D=Volkswagen&Models=5+Models+Selected&model%5B%5D=Golf&model%5B%5D=Golf+GTI&model%5B%5D=R&model%5B%5D=R32&model%5B%5D=Rabbit&miles=25&newUsed%5B%5D=Used&newUsed%5B%5D=Certified&Trims=All+Trims&perPage=30&sort=0"
+}

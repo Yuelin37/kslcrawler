@@ -1,0 +1,3 @@
+#!/bin/bash
+./build-golf-docker
+./build-jeep-docker

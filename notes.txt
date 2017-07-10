@@ -9,3 +9,9 @@ https://www.npmjs.com/package/simple-text-parser
 And here're some projects worth looking into. At least I can learn how they parse the web content.
 https://github.com/jdanders/ksl-classifieds-notifier
 https://gist.github.com/blakev/a6bbe3b5a861d64c6e36
+
+
+
+Enhancement to do:
+=================================================================================
+1. Add timestamp to log
