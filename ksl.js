@@ -4,6 +4,7 @@ var path = require('path');
 var childProcess = require('child_process');
 var phantomjs = require('phantomjs-prebuilt');
 var binPath = phantomjs.path;
+writeLog(binPath);
 var fs = require('fs');
 var properties = require('properties');
 // var sleep = require('sleep');
