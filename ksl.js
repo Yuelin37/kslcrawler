@@ -104,6 +104,9 @@ function checkItems() {
     childArgs[1] = queries[q];
     childProcess.execFile(binPath, childArgs, function (err, stdout, stderr) {
       let msg = stdout;
+      writeLog(err);
+      writeLog(stderr);
+      writeLog(msg);
       // As of 2018-08-15, there're some TypeError at the beginning of the
       // returned data, need to get rid of it first.
       let data = '{' + msg.substring(msg.indexOf("title") - 13, msg.length - 2) + '}';
