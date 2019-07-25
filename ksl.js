@@ -14,6 +14,9 @@ var interval;
 var allowNotificationHourStart = 17;
 var allowNotificationHourEnd = 21;
 
+let ts_start = Date.now();
+
+let interval_secs = 600;
 
 var queryFile = __dirname + '/query.json';
 
@@ -73,7 +76,7 @@ function saveNewItemsFile(newItemsfile, newItems) {
   writeLog("writing: " + JSON.stringify(newItems));
   fs.writeFile(newItemsfile, JSON.stringify(newItems), 'utf8', () => {
     // writeLog("New Items Saved: " + newItemsfile);
-    if (checkToSendNotificationNow()){
+    if (checkToSendNotificationNow()) {
       sendSlackNotification(newItemsfile);
     }
   });
@@ -142,7 +145,7 @@ function checkItems() {
           fs.writeFile(itemfile, JSON.stringify(items), 'utf8', function () {
             writeLog('Done --- getting data for: ' + q);
           });
-          if(foundNewItem){
+          if (foundNewItem && (Date.now() - ts_start > interval_secs * 1000)) {
             saveNewItemsFile(newItemsfile, newItems);
           }
         });
@@ -160,7 +163,7 @@ properties.parse('.properties', { path: true }, function (error, obj) {
     url_query
   ];
   checkItems();
-  interval = setInterval(checkItems, 600000);
+  interval = setInterval(checkItems, interval_secs * 1000);
 });
 
 // clearInterval(interval);
