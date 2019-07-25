@@ -158,16 +158,23 @@ function checkItems() {
   }
 }
 
-properties.parse('.properties', { path: true }, function (error, obj) {
-  if (error) return console.error(error);
+// properties.parse('.properties', { path: true }, function (error, obj) {
+//   if (error) return console.error(error);
 
-  url_query = obj.url;
-  childArgs = [
-    path.join(__dirname, 'getlist.js'),
-    url_query
-  ];
-  checkItems();
-  interval = setInterval(checkItems, interval_secs * 1000);
-});
+//   url_query = obj.url;
+//   childArgs = [
+//     path.join(__dirname, 'getlist.js'),
+//     url_query
+//   ];
+//   checkItems();
+//   interval = setInterval(checkItems, interval_secs * 1000);
+// });
+
+childArgs = [
+  path.join(__dirname, 'getlist.js'),
+  url_query
+];
+checkItems();
+interval = setInterval(checkItems, interval_secs * 1000);
 
 // clearInterval(interval);
