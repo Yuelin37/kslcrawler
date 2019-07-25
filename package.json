@@ -12,8 +12,7 @@
     "casperjs": "^1.1.4",
     "crawler": "^1.2.1",
     "phantomjs-prebuilt": "^2.1.16",
-    "properties": "^1.2.1",
-    "sleep": "^6.1.0"
+    "properties": "^1.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
