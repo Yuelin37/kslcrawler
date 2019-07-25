@@ -1,4 +1,4 @@
-FROM node:8.1.0-onbuild
+FROM node:10.16-alpine
 
 RUN apt-get update \
   && apt-get install build-essential chrpath libssl-dev libxft-dev -y \
