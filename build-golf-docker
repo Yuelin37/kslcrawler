@@ -1,3 +1,0 @@
-#!/bin/bash
-cp -f .properties_golf .properties
-docker build -t checkgolf .

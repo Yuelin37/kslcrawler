@@ -1,3 +1,0 @@
-#!/bin/bash
-cp -f .properties_jeep .properties
-docker build -t checkjeep .
