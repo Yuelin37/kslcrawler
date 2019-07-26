@@ -1,7 +1,7 @@
 FROM node:8.1.0-onbuild
 
 RUN apt-get update \
-  && apt-get install build-essential chrpath libssl-dev libxft-dev -y \
+  && apt-get install apt-utils build-essential chrpath libssl-dev libxft-dev -y \
   && apt-get install libfreetype6 libfreetype6-dev -y \
   && apt-get install libfontconfig1 libfontconfig1-dev vim -y
 
